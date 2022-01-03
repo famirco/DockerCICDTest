@@ -46,7 +46,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          file: ./docker-compose.dev.yml
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/python-docker_web:latest
           cache-from: type=local,src=/tmp/.buildx-cache
