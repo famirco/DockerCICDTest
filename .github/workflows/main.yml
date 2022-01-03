@@ -47,6 +47,7 @@ jobs:
         with:
           context: ./
           file: ./Dockerfile
+          builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/python-docker_web:latest
           cache-from: type=local,src=/tmp/.buildx-cache
